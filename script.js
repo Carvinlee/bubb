@@ -7,6 +7,8 @@ const yesButtons = document.querySelectorAll('#yesBtn, #yesBtn2');
 const initialButtons = document.getElementById('initialButtons');
 const celebrationSection = document.getElementById('celebrationSection');
 const plansSection = document.getElementById('plansSection');
+const finalMessage = document.getElementById('finalMessage');
+const finalBackBtn = document.getElementById('finalBackBtn');
 const celebrationNextBtn = document.getElementById('celebrationNextBtn');
 const backBtn = document.getElementById('backBtn');
 const nextBtn = document.getElementById('nextBtn');
@@ -56,10 +58,26 @@ function updatePlanView() {
   
   // Update button states
   backBtn.disabled = false;
-  nextBtn.disabled = currentPlanIndex === totalPlans - 1;
+  // On last plan, change Next to Finish and keep it enabled so it can show final message
+  if (currentPlanIndex === totalPlans - 1) {
+    nextBtn.textContent = 'Finish →';
+    nextBtn.disabled = false;
+  } else {
+    nextBtn.textContent = 'Next →';
+    nextBtn.disabled = false;
+  }
 }
 
 backBtn.addEventListener('click', () => {
+  // If currently showing final message, go back to the last plan
+  if (currentScreen === 'final') {
+    finalMessage.style.display = 'none';
+    plansSection.style.display = 'block';
+    currentScreen = 'plans';
+    currentPlanIndex = totalPlans - 1;
+    updatePlanView();
+    return;
+  }
   if (currentPlanIndex > 0) {
     currentPlanIndex--;
     updatePlanView();
@@ -75,5 +93,25 @@ nextBtn.addEventListener('click', () => {
   if (currentPlanIndex < totalPlans - 1) {
     currentPlanIndex++;
     updatePlanView();
+  } else {
+    // Last plan -> show final message
+    showFinalMessage();
   }
 });
+
+function showFinalMessage() {
+  plansSection.style.display = 'none';
+  finalMessage.style.display = 'block';
+  currentScreen = 'final';
+}
+
+// Back button specifically on the final message
+if (finalBackBtn) {
+  finalBackBtn.addEventListener('click', () => {
+    finalMessage.style.display = 'none';
+    plansSection.style.display = 'block';
+    currentScreen = 'plans';
+    currentPlanIndex = totalPlans - 1;
+    updatePlanView();
+  });
+}

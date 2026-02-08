@@ -305,3 +305,34 @@ body {
   opacity:0.5;
   cursor:not-allowed;
 }
+
+/* Final message styles */
+.final-content{
+  padding:36px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:220px;
+}
+.final-title{
+  font-family: 'Gravitas One', 'Playwrite NZ Basic', cursive;
+  font-size:34px;
+  color:var(--accent);
+  margin:0 0 12px 0;
+  text-transform:uppercase;
+  letter-spacing:0.6px;
+  animation:pop 0.5s ease-out;
+}
+.final-sub{
+  font-family: 'Dancing Script', cursive;
+  font-size:22px;
+  color:#333;
+  margin:0;
+  animation:fadeIn 0.6s ease-out 0.2s both;
+}
+
+@keyframes pop{
+  from{transform:scale(0.9); opacity:0}
+  to{transform:scale(1); opacity:1}
+}
