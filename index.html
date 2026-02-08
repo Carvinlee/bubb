@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Valentine Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Dancing+Script:wght@400..700&family=Gravitas+One&family=Playwrite+NZ+Basic:wght@100..400&family=Roboto:wght@500&family=Tagesschrift&family=Yuji+Boku&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1 class="title">WILL YOU BE MY VALENTINE ON FEB 14?</h1>
+
+    <div class="gif-container">
+      <div class="tenor-gif-embed" data-postid="3124413797049955903" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/dinosaur-dance-corny-gif-3124413797049955903">Dinosaur Dance GIF</a>from <a href="https://tenor.com/search/dinosaur-gifs">Dinosaur GIFs</a></div>
+    </div>
+
+    <div class="buttons" id="initialButtons">
+      <button class="yes" id="yesBtn">Yes</button>
+      <button class="yes" id="yesBtn2">Yes</button>
+    </div>
+  </main>
+
+  <!-- Celebration + Photo Screen -->
+  <main class="card" id="celebrationSection" style="display:none;">
+    <div class="celebration-content">
+      <h1 class="celebration-text">YEYYYYY!</h1>
+      
+      
+      <div class="photos-grid">
+        <img src="images/1.jpg" alt="Us 1" class="couple-photo">
+        <img src="images/2.jpg" alt="Us 2" class="couple-photo">
+      </div>
+      <p class="celebration-sub">I LOVE YOU BUB ❤️</p>
+    </div>
+    <div class="nav-buttons">
+      <button class="nav-btn" id="celebrationNextBtn">Next →</button>
+    </div>
+  </main>
+
+  <!-- Plans Section (Hidden Initially) -->
+  <main class="card" id="plansSection" style="display:none;">
+    <h1 class="title" id="planTitle">FEBRUARY 14 PLANS</h1>
+
+    <!-- Plan 1: What to Wear -->
+    <div class="plan-view active" id="plan-0">
+      <div class="plan-content">
+        <h2>What to Wear:</h2>
+        <p class="plan-location">Any shade of green</p>
+      </div>
+    </div>
+
+    <!-- Plan 2: Meetup -->
+    <div class="plan-view" id="plan-1">
+      <div class="plan-content">
+        <h2>2:00 PM</h2>
+        <p class="plan-location">Meetup at Rotonda</p>
+        <p class="plan-desc">(Near SM Bacoor)</p>
+      </div>
+    </div>
+
+    <!-- Plan 3: Photobooth -->
+    <div class="plan-view" id="plan-2">
+      <div class="plan-content">
+        <h2>3:00 PM</h2>
+        <p class="plan-location">Photobooth</p>
+        <p class="plan-desc">@beyondthebooth @molito alabang</p>
+      </div>
+    </div>
+
+    <!-- Plan 4: Coffee -->
+    <div class="plan-view" id="plan-3">
+      <div class="plan-content">
+        <h2>4:00 PM</h2>
+        <p class="plan-location">Grouphug</p>
+        <p class="plan-desc">@Westgate Center, Filinvest Ave, Alabang</p>
+        <div class="menu">
+          <h3>What we will drink:</h3>
+          <ul>
+            <li>Toasted Sugar Latte</li>
+            <li>Iced Long White</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plan 5: Dinner -->
+    <div class="plan-view" id="plan-4">
+      <div class="plan-content">
+        <h2>6:30 PM</h2>
+        <p class="plan-location">Farmery Prime</p>
+        <p class="plan-desc">@Molito, Alabang</p>
+        <div class="menu">
+          <h3>What we will eat:</h3>
+          <ul>
+            <li>Farmery Steak Rice</li>
+            <li>Here Comes Truffle</li>
+            <li>Margherita</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <button class="nav-btn" id="backBtn">← Back</button>
+      <button class="nav-btn" id="nextBtn">Next →</button>
+    </div>
+  </main>
+
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
